@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10131A">
+<title>VOLT｜3C 生活科技選物</title>
+<style>
+:root{--bg:#f4f5f7;--ink:#151922;--muted:#737b89;--dark:#10131a;--panel:#fff;--line:#e6e8ed;--lime:#c9ff52;--blue:#596bff;--radius:22px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.wrap{max-width:1240px;margin:auto;padding:0 28px}
+.topline{background:var(--dark);color:#cdd1da;text-align:center;padding:9px 12px;font-size:11px;letter-spacing:1.5px}.topline b{color:var(--lime)}
+header{background:var(--dark);color:white;position:sticky;top:0;z-index:5;border-bottom:1px solid #272b35}.head{height:76px;display:flex;align-items:center;gap:34px}.brand{font-size:27px;font-weight:900;letter-spacing:4px;white-space:nowrap}.brand span{color:var(--lime)}.search{flex:1;position:relative}.search input{width:100%;border:1px solid #343945;border-radius:99px;background:#1b1f28;color:white;padding:13px 45px 13px 18px;outline:0}.search input:focus{border-color:var(--lime)}.search button{position:absolute;right:5px;top:4px;border:0;background:var(--lime);color:#111;border-radius:50%;height:34px;width:34px;font-size:18px}.head-actions{display:flex;gap:12px;align-items:center}.head-actions button{border:1px solid #3b404c;color:white;background:transparent;border-radius:99px;padding:10px 14px}.head-actions button:hover{border-color:var(--lime)}.cart-count{background:var(--lime);color:#111;border-radius:50%;padding:2px 6px;font-size:11px;margin-left:4px}
+nav{border-top:1px solid #252a34}.nav{display:flex;gap:28px;align-items:center;height:45px;overflow:auto;white-space:nowrap}.nav a{font-size:12px;color:#c5cad4;text-decoration:none}.nav a:hover{color:var(--lime)}
+.hero{padding:36px 0 25px}.hero-box{background:var(--dark);color:white;border-radius:28px;min-height:370px;display:grid;grid-template-columns:1.02fr .98fr;overflow:hidden;position:relative}.hero-copy{padding:52px 0 48px 54px;position:relative;z-index:1}.eyebrow{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;font-weight:800;color:#9ba4b4}.pill{display:inline-flex;align-items:center;gap:7px;border:1px solid #414752;border-radius:99px;padding:8px 12px;font-size:10px;color:#d9dce3}.pill i{width:6px;height:6px;border-radius:50%;background:var(--lime);display:inline-block}.hero h1{font-size:clamp(38px,5vw,64px);line-height:1.05;letter-spacing:-2.5px;margin:24px 0 14px}.hero h1 span{color:var(--lime)}.hero p{color:#aeb5c2;font-size:14px;line-height:1.9;max-width:400px}.cta-row{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}.btn-primary{border:0;border-radius:99px;background:var(--lime);color:#111;font-weight:800;padding:14px 20px}.btn-ghost{border:1px solid #424752;border-radius:99px;background:transparent;color:white;padding:13px 18px}.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;min-height:330px;background:radial-gradient(ellipse at 55% 45%,#3c4555 0%,#1a1f29 47%,#10131a 72%)}.hero-visual:before{content:"";position:absolute;width:280px;height:280px;border:1px solid #ffffff14;border-radius:50%}.hero-visual:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #ffffff0c;border-radius:50%}.hero-visual img{width:min(88%,460px);height:320px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 30px 35px #0008)}.float-tag{position:absolute;z-index:2;right:24px;bottom:30px;background:#242a35;border:1px solid #454b58;border-radius:14px;padding:13px 16px;font-size:11px}.float-tag strong{display:block;color:var(--lime);font-size:16px;margin-top:4px}
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:19px 0 46px}.benefit{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:16px;display:flex;gap:12px;align-items:center}.benefit .ico{width:38px;height:38px;border-radius:12px;background:#f0f2e9;display:grid;place-items:center;font-size:18px}.benefit strong{font-size:12px;display:block}.benefit small{color:var(--muted);font-size:10px;display:block;margin-top:4px}
+.section{padding:0 0 55px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:22px}.section-head h2{font-size:28px;letter-spacing:-.8px;margin:7px 0 0}.section-head p{font-size:12px;color:var(--muted);margin:0}.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:13px}.category{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:20px 16px;text-align:left;transition:.2s}.category:hover,.category.active{border-color:var(--dark);transform:translateY(-3px);box-shadow:0 10px 25px #1519220b}.category .cat-icon{height:54px;display:grid;place-items:center;font-size:34px;margin-bottom:14px}.category strong{font-size:13px;display:block}.category small{display:block;color:var(--muted);margin-top:6px;font-size:10px}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:20px}.filter{border:1px solid #dfe2e8;background:white;color:#4d5563;border-radius:99px;padding:9px 14px;font-size:11px}.filter.active{background:var(--dark);border-color:var(--dark);color:white}.sort{margin-left:auto;border:1px solid #dfe2e8;background:white;border-radius:10px;padding:10px 12px;font-size:11px;color:#4d5563}
+.products{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}.product{background:var(--panel);border:1px solid var(--line);border-radius:19px;overflow:hidden;position:relative;transition:transform .2s,box-shadow .2s}.product:hover{transform:translateY(-4px);box-shadow:0 14px 32px #15192210}.product-image{height:210px;display:grid;place-items:center;position:relative;background:linear-gradient(145deg,#f7f8fa,#eceff3);padding:18px}.product-image img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply;transition:transform .3s}.product:hover .product-image img{transform:scale(1.05)}.badge{position:absolute;top:12px;left:12px;border-radius:6px;background:var(--lime);padding:6px 8px;font-size:9px;font-weight:900}.wish{position:absolute;top:9px;right:10px;border:0;border-radius:50%;background:#ffffffdc;width:32px;height:32px;font-size:17px;color:#4c5360}.wish.saved{color:#ed5264}.product-info{padding:16px}.product-type{font-size:9px;letter-spacing:1.2px;color:#7d8491;text-transform:uppercase}.product h3{font-size:14px;margin:8px 0 7px;min-height:35px;line-height:1.5}.rating{font-size:10px;color:#9a7627}.rating span{color:#8b919c;margin-left:4px}.product-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px;padding-top:13px;border-top:1px solid #edf0f3;gap:8px}.price{font-size:20px;font-weight:850;letter-spacing:-.6px}.price small{font-size:10px;font-weight:500;color:var(--muted)}.add{border:0;width:36px;height:36px;border-radius:50%;background:var(--dark);color:var(--lime);font-size:20px;transition:.2s}.add:hover{background:var(--lime);color:#111}.empty{display:none;padding:40px;text-align:center;color:var(--muted);background:white;border-radius:16px}
+.promo{margin:0 0 58px;background:#e7ebdf;border-radius:23px;display:grid;grid-template-columns:1fr auto;align-items:center;padding:32px 38px;gap:20px}.promo h2{font-size:25px;margin:9px 0}.promo p{font-size:12px;color:#646d63;line-height:1.7}.promo button{background:var(--dark);color:white;border:0;border-radius:99px;padding:14px 20px;font-weight:700}
+footer{background:var(--dark);color:#c2c7d1;padding:35px 0}.foot{display:flex;justify-content:space-between;gap:22px;align-items:center;flex-wrap:wrap}.foot .brand{color:white}.foot p{font-size:11px;color:#858d9c}.foot-links{display:flex;gap:18px;font-size:11px}.foot-links a{color:#c2c7d1;text-decoration:none}
+.overlay{position:fixed;inset:0;background:#0a0c11a8;z-index:20;display:none;align-items:center;justify-content:center;padding:18px}.overlay.show{display:flex}.modal{background:white;color:var(--ink);border-radius:22px;padding:26px;width:min(460px,100%);box-shadow:0 30px 90px #0004}.modal-head{display:flex;justify-content:space-between;align-items:center}.modal h2{font-size:22px;margin:0}.close{border:0;background:#f0f1f4;border-radius:50%;width:34px;height:34px;font-size:19px}.cart-items{margin:20px 0;max-height:45vh;overflow:auto}.cart-line{display:grid;grid-template-columns:1fr auto;gap:8px;padding:13px 0;border-bottom:1px solid #e8eaf0;font-size:13px}.cart-line small{display:block;color:var(--muted);margin-top:4px}.qty{display:flex;gap:8px;align-items:center}.qty button{border:1px solid #e1e4e9;background:white;border-radius:6px;width:25px;height:25px}.cart-total{display:flex;justify-content:space-between;border-top:1px solid #e8eaf0;padding-top:16px;font-weight:800}.checkout{width:100%;margin-top:17px;padding:14px;border:0;border-radius:99px;background:var(--lime);font-weight:900}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#161a22;color:white;padding:13px 20px;border-radius:99px;font-size:12px;z-index:30;display:none;box-shadow:0 10px 30px #0002;white-space:nowrap}.toast.show{display:block}
+@media(max-width:900px){.wrap{padding:0 20px}.head{gap:18px}.hero-copy{padding:40px 0 38px 34px}.hero-visual img{height:280px}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.benefits{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.wrap{padding:0 15px}.topline{font-size:9px}.head{height:auto;min-height:68px;gap:12px;flex-wrap:wrap;padding:13px 0}.brand{font-size:23px}.search{order:3;flex-basis:100%}.head-actions{margin-left:auto}.head-actions button{padding:8px 10px;font-size:11px}.nav{height:40px;gap:20px}.hero{padding-top:20px}.hero-box{grid-template-columns:1fr}.hero-copy{padding:32px 24px 12px}.hero h1{font-size:43px}.hero p{font-size:12px}.hero-visual{min-height:245px}.hero-visual img{height:230px}.float-tag{right:13px;bottom:15px}.benefits{gap:8px;margin-bottom:38px}.benefit{padding:11px;gap:8px}.benefit .ico{width:32px;height:32px;font-size:15px}.benefit strong{font-size:10px}.benefit small{font-size:9px}.section-head h2{font-size:24px}.section-head p{max-width:135px;text-align:right;line-height:1.6}.categories{grid-template-columns:repeat(2,1fr);gap:9px}.category{padding:15px}.category .cat-icon{height:40px;font-size:28px;margin-bottom:10px}.products{gap:10px}.product-image{height:155px;padding:12px}.product-info{padding:12px}.product h3{font-size:12px;min-height:36px}.price{font-size:17px}.add{width:32px;height:32px}.toolbar{gap:7px}.filter{padding:8px 11px}.sort{width:100%;margin-left:0}.promo{grid-template-columns:1fr;padding:25px 22px}.promo h2{font-size:22px}.promo button{width:100%}.foot{align-items:flex-start;flex-direction:column}.foot-links{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="topline">VOLT MEMBER WEEK　 <b>全館滿 NT$2,000 免運</b>　｜　安心付款・快速出貨</div>
+<header>
+  <div class="wrap head">
+    <a class="brand" href="#" style="color:white;text-decoration:none">VOLT<span>.</span></a>
+    <div class="search"><input id="searchInput" type="search" placeholder="搜尋耳機、鍵盤、智慧手錶……" aria-label="搜尋商品"><button onclick="applyFilters()" aria-label="搜尋">⌕</button></div>
+    <div class="head-actions"><button onclick="showToast('會員功能即將推出，敬請期待！')">登入 / 註冊</button><button onclick="openCart()">購物袋 <span class="cart-count" id="cartCount">0</span></button></div>
+  </div>
+  <nav><div class="wrap nav"><a href="#categories">所有分類</a><a href="#products" onclick="setCategory('耳機')">耳機音訊</a><a href="#products" onclick="setCategory('手機')">手機配件</a><a href="#products" onclick="setCategory('電腦')">電腦周邊</a><a href="#products" onclick="setCategory('穿戴')">智慧穿戴</a><a href="#deals">本週優惠</a><a href="#products">人氣排行榜</a></div></nav>
+</header>
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-box">
+      <div class="hero-copy"><div class="pill"><i></i> NEXT-GEN TECH, EVERYDAY</div><h1>科技感生活，<br>從 <span>VOLT.</span> 開始。</h1><p>精選讓日常更聰明的 3C 好物。從沉浸音質到高效工作裝備，找到真正適合你的科技夥伴。</p><div class="cta-row"><button class="btn-primary" onclick="document.querySelector('#products').scrollIntoView({behavior:'smooth'})">探索人氣商品　↗</button><button class="btn-ghost" onclick="document.querySelector('#categories').scrollIntoView({behavior:'smooth'})">瀏覽所有分類</button></div></div>
+      <div class="hero-visual"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85" alt="質感無線耳機產品主視覺"><div class="float-tag">EDITOR'S PICK<strong>沉浸式音訊系列</strong></div></div>
+    </div>
+  </section>
+  <section class="benefits" aria-label="購物保障">
+    <div class="benefit"><div class="ico">🚚</div><div><strong>快速到貨</strong><small>指定商品快速出貨</small></div></div>
+    <div class="benefit"><div class="ico">🛡️</div><div><strong>安心保固</strong><small>商品保固服務有保障</small></div></div>
+    <div class="benefit"><div class="ico">↩️</div><div><strong>簡單退換</strong><small>依購物條款辦理</small></div></div>
+    <div class="benefit"><div class="ico">🔒</div><div><strong>安全付款</strong><small>重視每一筆交易</small></div></div>
+  </section>
+  <section class="section" id="categories">
+    <div class="section-head"><div><div class="eyebrow">Shop by category</div><h2>找到你的科技日常</h2></div><p>依照你的生活方式，挑選最合適的裝備。</p></div>
+    <div class="categories">
+      <button class="category" onclick="setCategory('耳機')"><div class="cat-icon">🎧</div><strong>耳機音訊</strong><small>沉浸每個細節 →</small></button>
+      <button class="category" onclick="setCategory('手機')"><div class="cat-icon">📱</div><strong>手機配件</strong><small>日常便利升級 →</small></button>
+      <button class="category" onclick="setCategory('電腦')"><div class="cat-icon">⌨️</div><strong>電腦周邊</strong><small>效率再進化 →</small></button>
+      <button class="category" onclick="setCategory('穿戴')"><div class="cat-icon">⌚</div><strong>智慧穿戴</strong><small>掌握生活節奏 →</small></button>
+      <button class="category" onclick="setCategory('居家')"><div class="cat-icon">🔊</div><strong>智慧居家</strong><small>讓空間更聰明 →</small></button>
+    </div>
+  </section>
+  <section class="section" id="products">
+    <div class="section-head"><div><div class="eyebrow">The good stuff</div><h2>人氣科技選物</h2></div><p>好設計，也要好好用。</p></div>
+    <div class="toolbar">
+      <button class="filter active" data-filter="全部" onclick="setCategory('全部')">全部商品</button>
+      <button class="filter" data-filter="耳機" onclick="setCategory('耳機')">耳機音訊</button>
+      <button class="filter" data-filter="手機" onclick="setCategory('手機')">手機配件</button>
+      <button class="filter" data-filter="電腦" onclick="setCategory('電腦')">電腦周邊</button>
+      <button class="filter" data-filter="穿戴" onclick="setCategory('穿戴')">智慧穿戴</button>
+      <select class="sort" id="sortSelect" onchange="applyFilters()" aria-label="商品排序"><option value="featured">推薦排序</option><option value="low">價格由低到高</option><option value="high">價格由高到低</option></select>
+    </div>
+    <div class="products" id="productGrid"></div>
+    <div class="empty" id="emptyState">找不到符合條件的商品，請試試其他關鍵字。</div>
+  </section>
+  <section class="promo" id="deals"><div><div class="eyebrow">VOLT INSIDER</div><h2>你的下一件科技好物，值得更聰明地選。</h2><p>訂閱新品情報與購物靈感，讓每次升級都剛剛好。</p></div><button onclick="subscribe()">加入 VOLT 情報站　→</button></section>
+</main>
+<footer><div class="wrap foot"><div><div class="brand">VOLT<span>.</span></div><p>Technology for your everyday.</p></div><div class="foot-links"><a href="#categories">商品分類</a><a href="#products">人氣商品</a><a href="#deals">會員情報</a><a href="#" onclick="showToast('客服時間：週一至週五 09:00–18:00');return false">聯絡客服</a></div><p>© 2026 VOLT. 示範電商網站｜商品、價格及結帳功能為展示用途</p></div></footer>
+<div class="overlay" id="cartOverlay" onclick="if(event.target===this)closeCart()"><div class="modal"><div class="modal-head"><h2>你的購物袋</h2><button class="close" onclick="closeCart()">×</button></div><div class="cart-items" id="cartItems"></div><div class="cart-total"><span>商品總計</span><span id="cartTotal">NT$ 0</span></div><button class="checkout" onclick="checkout()">前往結帳　→</button></div></div>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const products=[
+{id:1,name:'Studio 無線降噪耳機',category:'耳機',type:'AUDIO / WIRELESS',price:3290,old:3990,tag:'熱銷 TOP 1',rating:'4.9',reviews:328,img:'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=650&q=80'},
+{id:2,name:'AirBeat 真無線藍牙耳機',category:'耳機',type:'AUDIO / TRUE WIRELESS',price:1890,old:2290,tag:'人氣推薦',rating:'4.8',reviews:216,img:'https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=650&q=80'},
+{id:3,name:'MagSafe 磁吸行動電源',category:'手機',type:'POWER / MAGNETIC',price:1490,old:1790,tag:'新品上市',rating:'4.7',reviews:142,img:'https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?auto=format&fit=crop&w=650&q=80'},
+{id:4,name:'Pro 機械式無線鍵盤',category:'電腦',type:'DESK / MECHANICAL',price:2690,old:3190,tag:'編輯精選',rating:'4.9',reviews:184,img:'https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=650&q=80'},
+{id:5,name:'Active 智慧運動手錶',category:'穿戴',type:'WEARABLE / SMART',price:4290,old:4990,tag:'限時優惠',rating:'4.8',reviews:201,img:'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=650&q=80'},
+{id:6,name:'Mini 隨身藍牙喇叭',category:'居家',type:'HOME / SPEAKER',price:1290,old:1590,tag:'輕巧便攜',rating:'4.7',reviews:119,img:'https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=650&q=80'},
+{id:7,name:'USB-C 多功能集線器',category:'電腦',type:'DESK / CONNECTIVITY',price:990,old:1290,tag:'工作必備',rating:'4.6',reviews:97,img:'https://images.unsplash.com/photo-1625842268584-8f3296236761?auto=format&fit=crop&w=650&q=80'},
+{id:8,name:'透明防摔手機保護殼',category:'手機',type:'MOBILE / ACCESSORY',price:590,old:790,tag:'日常必備',rating:'4.6',reviews:156,img:'https://images.unsplash.com/photo-1603313011101-320f26a4f6f6?auto=format&fit=crop&w=650&q=80'}
+];
+let selectedCategory='全部';let cart={};let saved=new Set();
+const money=n=>'NT$ '+n.toLocaleString('en-US');
+function renderProducts(){
+ const query=document.getElementById('searchInput').value.trim().toLowerCase();
+ let list=products.filter(p=>(selectedCategory==='全部'||p.category===selectedCategory)&&(!query||(p.name+' '+p.category+' '+p.type).toLowerCase().includes(query)));
+ const sort=document.getElementById('sortSelect').value;
+ if(sort==='low')list.sort((a,b)=>a.price-b.price);if(sort==='high')list.sort((a,b)=>b.price-a.price);
+ const grid=document.getElementById('productGrid');grid.innerHTML='';
+ list.forEach(p=>{const card=document.createElement('article');card.className='product';card.innerHTML=`<div class="product-image"><img src="${p.img}" alt="${p.name}" loading="lazy"><span class="badge">${p.tag}</span><button class="wish ${saved.has(p.id)?'saved':''}" aria-label="收藏${p.name}" onclick="toggleWish(${p.id})">${saved.has(p.id)?'♥':'♡'}</button></div><div class="product-info"><div class="product-type">${p.type}</div><h3>${p.name}</h3><div class="rating">★ ${p.rating}<span>(${p.reviews} 則評價)</span></div><div class="product-bottom"><div><div class="price">${money(p.price)}</div><small style="color:#9299a4;text-decoration:line-through;font-size:10px">${money(p.old)}</small></div><button class="add" aria-label="將${p.name}加入購物袋" onclick="addToCart(${p.id})">＋</button></div></div>`;grid.appendChild(card);});
+ document.getElementById('emptyState').style.display=list.length?'none':'block';
+ document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter===selectedCategory));
+ document.querySelectorAll('.category').forEach((b,i)=>b.classList.toggle('active',['耳機','手機','電腦','穿戴','居家'][i]===selectedCategory));
+}
+function applyFilters(){renderProducts()}
+function setCategory(c){selectedCategory=c;renderProducts();document.getElementById('products').scrollIntoView({behavior:'smooth',block:'start'})}
+function toggleWish(id){if(saved.has(id)){saved.delete(id);showToast('已從收藏移除。')}else{saved.add(id);showToast('已加入收藏！')}renderProducts()}
+function addToCart(id){cart[id]=(cart[id]||0)+1;updateCart();showToast('已加入購物袋！')}
+function updateCart(){let count=Object.values(cart).reduce((a,b)=>a+b,0);document.getElementById('cartCount').textContent=count;const entries=Object.entries(cart);document.getElementById('cartItems').innerHTML=entries.length?entries.map(([id,q])=>{let p=products.find(x=>x.id===Number(id));return `<div class="cart-line"><div><strong>${p.name}</strong><small>${money(p.price)} × ${q}</small></div><div class="qty"><button onclick="changeQty(${id},-1)">−</button><span>${q}</span><button onclick="changeQty(${id},1)">＋</button></div></div>`}).join(''):'<p style="color:#737b89;text-align:center;padding:24px 0">購物袋還是空的，去挑選喜歡的商品吧！</p>';let total=entries.reduce((sum,[id,q])=>sum+products.find(p=>p.id===Number(id)).price*q,0);document.getElementById('cartTotal').textContent=money(total)}
+function changeQty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];updateCart()}
+function openCart(){updateCart();document.getElementById('cartOverlay').classList.add('show')}
+function closeCart(){document.getElementById('cartOverlay').classList.remove('show')}
+function checkout(){if(!Object.keys(cart).length){showToast('購物袋目前是空的。');return}showToast('這是展示網站，尚未串接實際付款。');closeCart()}
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),2300)}
+function subscribe(){const email=prompt('輸入 Email，接收 VOLT 新品與優惠情報：');if(email&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))showToast('感謝訂閱！這是展示表單，尚未儲存資料。');else if(email)showToast('請輸入有效的 Email。')}
+document.getElementById('searchInput').addEventListener('keydown',e=>{if(e.key==='Enter')applyFilters()});
+renderProducts();updateCart();
+</script>
+</body>
+</html>
