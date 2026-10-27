@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10131a">
+<title>VOLT.｜科技生活選物首頁</title>
+<style>
+:root{--dark:#10131a;--lime:#c9ff52;--paper:#f4f5f7;--ink:#171a22;--muted:#7b8290;--line:#e4e7ec}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans TC",sans-serif;background:var(--paper);color:var(--ink)}button,input{font:inherit}button,a{cursor:pointer}a{text-decoration:none;color:inherit}.announcement{background:var(--dark);color:#d5d8df;text-align:center;padding:10px 14px;font-size:11px;letter-spacing:1px}.announcement strong{color:var(--lime)}header{background:var(--dark);color:#fff;border-bottom:1px solid #2a2e38}.container{width:min(1180px,calc(100% - 40px));margin:auto}.header-main{height:78px;display:flex;align-items:center;gap:32px}.logo{font-weight:950;font-size:29px;letter-spacing:4px;white-space:nowrap}.logo span{color:var(--lime)}.search{position:relative;flex:1}.search input{width:100%;padding:14px 48px 14px 18px;background:#1c2029;border:1px solid #383d49;border-radius:30px;color:white;outline:none}.search input:focus{border-color:var(--lime)}.search button{position:absolute;right:5px;top:5px;width:35px;height:35px;border:0;border-radius:50%;background:var(--lime);font-size:19px}.actions{display:flex;gap:10px}.actions button{background:transparent;color:white;border:1px solid #444956;border-radius:25px;padding:10px 15px;font-size:12px}.actions button:hover{border-color:var(--lime)}nav{border-top:1px solid #252a33}.navlinks{height:44px;display:flex;align-items:center;gap:28px;overflow:auto;white-space:nowrap}.navlinks a{font-size:12px;color:#c8cbd3}.navlinks a:hover{color:var(--lime)}
+main{padding:30px 0 56px}.hero{background:var(--dark);color:white;border-radius:26px;overflow:hidden;display:grid;grid-template-columns:1.04fr .96fr;min-height:410px}.hero-copy{padding:52px 0 48px 54px;align-self:center}.label{color:#9ca4b3;font-size:10px;letter-spacing:2.5px;font-weight:800;text-transform:uppercase}.label:before{content:"";display:inline-block;width:20px;height:2px;background:var(--lime);vertical-align:middle;margin-right:9px}.hero h1{font-size:clamp(42px,5.2vw,68px);line-height:1.05;letter-spacing:-2.8px;margin:22px 0 16px}.hero h1 em{font-style:normal;color:var(--lime)}.hero p{font-size:14px;line-height:1.9;color:#aeb5c1;max-width:410px}.buttons{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.primary{border:0;border-radius:30px;background:var(--lime);color:#111;padding:14px 21px;font-weight:850}.outline{border:1px solid #474c58;border-radius:30px;background:transparent;color:#fff;padding:13px 19px}.hero-image{position:relative;display:grid;place-items:center;background:radial-gradient(ellipse at center,#384150,#1b202a 52%,#10131a 76%);min-height:360px;overflow:hidden}.hero-image:before,.hero-image:after{content:"";position:absolute;width:310px;height:310px;border:1px solid #ffffff13;border-radius:50%}.hero-image:after{width:410px;height:410px}.hero-image img{width:92%;height:350px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 28px 28px #0007)}.product-note{position:absolute;bottom:22px;right:22px;z-index:2;background:#242a35;border:1px solid #444a56;border-radius:13px;padding:13px 16px;font-size:10px;color:#d9dde4}.product-note b{display:block;font-size:15px;color:var(--lime);margin-top:5px}
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:18px 0 52px}.perk{display:flex;align-items:center;gap:12px;padding:16px;background:white;border:1px solid var(--line);border-radius:15px}.perk-icon{width:39px;height:39px;display:grid;place-items:center;background:#f0f3e8;border-radius:12px;font-size:18px}.perk strong{display:block;font-size:12px}.perk small{display:block;font-size:10px;color:var(--muted);margin-top:5px}
+.section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:22px}.section-heading h2{font-size:29px;letter-spacing:-1px;margin:8px 0 0}.section-heading p{font-size:12px;color:var(--muted);margin:0}.categories{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.category{background:white;border:1px solid var(--line);border-radius:18px;padding:22px 17px;text-align:left;transition:.2s}.category:hover{transform:translateY(-4px);border-color:#b9c1a8;box-shadow:0 12px 28px #1111}.category-icon{font-size:34px;height:55px;display:grid;place-items:center;margin-bottom:14px}.category strong{font-size:13px;display:block}.category small{display:block;color:var(--muted);font-size:10px;margin-top:7px}
+.featured{margin-top:53px}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.feature-card{position:relative;min-height:245px;border-radius:20px;overflow:hidden;background:#dfe3e8}.feature-card img{position:absolute;width:100%;height:100%;object-fit:cover;transition:transform .35s}.feature-card:hover img{transform:scale(1.05)}.feature-card:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,#10131ad9,transparent 75%)}.feature-text{position:absolute;z-index:1;bottom:20px;left:20px;color:white}.feature-text small{font-size:10px;color:var(--lime);letter-spacing:1.5px}.feature-text h3{font-size:21px;margin:8px 0}.feature-text span{font-size:11px;color:#d8dce3}
+.newsletter{margin-top:55px;border-radius:23px;background:#e6eadf;padding:35px 38px;display:flex;align-items:center;justify-content:space-between;gap:24px}.newsletter h2{font-size:25px;margin:9px 0}.newsletter p{font-size:12px;color:#687064;line-height:1.8;margin:0}.newsletter button{border:0;background:var(--dark);color:white;border-radius:30px;padding:14px 20px;font-weight:750;white-space:nowrap}
+footer{background:var(--dark);color:#c5cad3;padding:32px 0}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}.footer-row p{font-size:11px;color:#858d9b}.footer-links{display:flex;gap:18px;font-size:11px}.footer-links a:hover{color:var(--lime)}.toast{display:none;position:fixed;bottom:22px;left:50%;transform:translateX(-50%);background:#171b23;color:white;border-radius:25px;padding:13px 20px;font-size:12px;z-index:10;box-shadow:0 10px 30px #0003}.toast.show{display:block}
+@media(max-width:850px){.header-main{gap:18px}.hero-copy{padding:38px 0 38px 32px}.hero h1{font-size:46px}.perks{grid-template-columns:repeat(2,1fr)}.categories{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.container{width:calc(100% - 28px)}.announcement{font-size:9px}.header-main{height:auto;padding:13px 0;flex-wrap:wrap;gap:12px}.logo{font-size:24px}.actions{margin-left:auto}.actions button{padding:8px 10px;font-size:10px}.search{flex-basis:100%;order:3}.navlinks{gap:20px;height:41px}.hero{grid-template-columns:1fr}.hero-copy{padding:32px 23px 10px}.hero h1{font-size:45px}.hero p{font-size:12px}.hero-image{min-height:240px}.hero-image img{height:225px}.product-note{right:12px;bottom:12px}.perks{gap:8px;margin-bottom:40px}.perk{padding:11px;gap:8px}.perk-icon{width:32px;height:32px;font-size:15px}.perk strong{font-size:10px}.perk small{font-size:9px}.section-heading h2{font-size:24px}.section-heading p{font-size:10px;text-align:right;max-width:135px;line-height:1.6}.categories{grid-template-columns:repeat(2,1fr);gap:9px}.category{padding:15px}.category-icon{font-size:28px;height:42px;margin-bottom:10px}.feature-grid{grid-template-columns:1fr}.feature-card{min-height:210px}.newsletter{padding:25px 22px;flex-direction:column;align-items:flex-start}.newsletter h2{font-size:22px}.newsletter button{width:100%}.footer-row{align-items:flex-start;flex-direction:column}.footer-links{flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<div class="announcement">VOLT MEMBER WEEK　 <strong>全館滿 NT$2,000 免運</strong>　｜　安心付款・快速出貨</div>
+<header>
+  <div class="container header-main">
+    <a class="logo" href="#">VOLT<span>.</span></a>
+    <form class="search" onsubmit="searchSite(event)"><input id="q" type="search" placeholder="搜尋耳機、鍵盤、智慧手錶……" aria-label="搜尋商品"><button aria-label="搜尋">⌕</button></form>
+    <div class="actions"><button onclick="notify('會員中心功能即將推出！')">登入 / 註冊</button><button onclick="notify('請前往商品頁瀏覽並加入購物袋。')">購物袋　＋</button></div>
+  </div>
+  <nav><div class="container navlinks"><a href="#categories">所有分類</a><a href="#featured">人氣精選</a><a href="#categories">耳機音訊</a><a href="#categories">手機配件</a><a href="#categories">電腦周邊</a><a href="#categories">智慧穿戴</a><a href="#newsletter">最新優惠</a></div></nav>
+</header>
+<main class="container">
+  <section class="hero">
+    <div class="hero-copy"><div class="label">Technology for everyday</div><h1>科技感生活，<br>從 <em>VOLT.</em> 開始。</h1><p>精選讓日常更聰明的 3C 好物。從沉浸音質到高效工作裝備，找到真正適合你的科技夥伴。</p><div class="buttons"><button class="primary" onclick="document.querySelector('#categories').scrollIntoView({behavior:'smooth'})">探索所有商品　↗</button><button class="outline" onclick="document.querySelector('#featured').scrollIntoView({behavior:'smooth'})">本週人氣精選</button></div></div>
+    <div class="hero-image"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=85" alt="無線耳機主視覺"><div class="product-note">EDITOR'S PICK<b>沉浸式音訊系列</b></div></div>
+  </section>
+  <section class="perks" aria-label="購物服務">
+    <div class="perk"><div class="perk-icon">🚚</div><div><strong>快速到貨</strong><small>指定商品快速出貨</small></div></div>
+    <div class="perk"><div class="perk-icon">🛡️</div><div><strong>安心保固</strong><small>售後服務有保障</small></div></div>
+    <div class="perk"><div class="perk-icon">↩️</div><div><strong>簡單退換</strong><small>依購物條款辦理</small></div></div>
+    <div class="perk"><div class="perk-icon">🔒</div><div><strong>安全付款</strong><small>重視每一筆交易</small></div></div>
+  </section>
+  <section id="categories">
+    <div class="section-heading"><div><div class="label">Shop by category</div><h2>找到你的科技日常</h2></div><p>依照你的生活方式，挑選合適的裝備。</p></div>
+    <div class="categories">
+      <a class="category" href="#featured" onclick="chooseCategory('耳機')"><div class="category-icon">🎧</div><strong>耳機音訊</strong><small>沉浸每個細節 →</small></a>
+      <a class="category" href="#featured" onclick="chooseCategory('手機')"><div class="category-icon">📱</div><strong>手機配件</strong><small>日常便利升級 →</small></a>
+      <a class="category" href="#featured" onclick="chooseCategory('電腦')"><div class="category-icon">⌨️</div><strong>電腦周邊</strong><small>效率再進化 →</small></a>
+      <a class="category" href="#featured" onclick="chooseCategory('穿戴')"><div class="category-icon">⌚</div><strong>智慧穿戴</strong><small>掌握生活節奏 →</small></a>
+      <a class="category" href="#featured" onclick="chooseCategory('居家')"><div class="category-icon">🔊</div><strong>智慧居家</strong><small>空間更聰明 →</small></a>
+    </div>
+  </section>
+  <section class="featured" id="featured">
+    <div class="section-heading"><div><div class="label">Curated tech</div><h2>本週人氣精選</h2></div><p id="featured-note">設計、效能與生活感一次到位。</p></div>
+    <div class="feature-grid">
+      <a class="feature-card" href="#categories"><img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=800&q=80" alt="耳機音訊精選" loading="lazy"><div class="feature-text"><small>01 / AUDIO</small><h3>聽見每個細節</h3><span>探索耳機音訊　↗</span></div></a>
+      <a class="feature-card" href="#categories"><img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=800&q=80" alt="智慧手機產品" loading="lazy"><div class="feature-text"><small>02 / MOBILE</small><h3>掌握你的節奏</h3><span>探索手機配件　↗</span></div></a>
+      <a class="feature-card" href="#categories"><img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=800&q=80" alt="筆記型電腦工作環境" loading="lazy"><div class="feature-text"><small>03 / WORKSPACE</small><h3>打造高效工作桌</h3><span>探索電腦周邊　↗</span></div></a>
+    </div>
+  </section>
+  <section class="newsletter" id="newsletter"><div><div class="label">VOLT insider</div><h2>下一件科技好物，值得聰明地選。</h2><p>訂閱新品情報與購物靈感，讓每次升級都剛剛好。</p></div><button onclick="subscribe()">加入 VOLT 情報站　→</button></section>
+</main>
+<footer><div class="container footer-row"><div><div class="logo">VOLT<span>.</span></div><p>Technology for your everyday.</p></div><div class="footer-links"><a href="#categories">商品分類</a><a href="#featured">人氣精選</a><a href="#newsletter">最新優惠</a></div><p>© 2026 VOLT. 首頁設計展示版</p></div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+function notify(message){const t=document.getElementById('toast');t.textContent=message;t.classList.add('show');clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.classList.remove('show'),2400)}
+function chooseCategory(category){document.getElementById('featured-note').textContent='你選擇了「'+category+'」分類；此首頁示範版可延伸串接商品列表。'}
+function searchSite(event){event.preventDefault();const q=document.getElementById('q').value.trim();if(q){notify('已收到搜尋關鍵字：「'+q+'」。可在商品頁查看搜尋結果。'}else{notify('請輸入想找的 3C 商品。'}}
+function subscribe(){const email=prompt('請輸入 Email，接收 VOLT 新品與優惠情報：');if(email&&/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){notify('感謝訂閱！此展示頁尚未儲存資料。')}else if(email){notify('請輸入有效的 Email。'}}
+</script>
+</body>
+</html>
